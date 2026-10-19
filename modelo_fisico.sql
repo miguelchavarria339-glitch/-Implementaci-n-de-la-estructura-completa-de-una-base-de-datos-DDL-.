@@ -1,4 +1,3 @@
-
 BEGIN;
 
 CREATE TABLE estudiante (
@@ -47,10 +46,3 @@ CREATE TABLE publicacion (
 CREATE INDEX idx_publicacion_estudiante ON publicacion (id_estudiante);
 CREATE INDEX idx_publicacion_materia ON publicacion (id_materia);
 COMMIT;
-
--- COMPROBACIÓN OPCIONAL: ejecutar por separado después de crear las tablas.
--- INSERT INTO estudiante(nombre,apellido,correo) VALUES ('Ana','Gomez','ana@ejemplo.edu');
--- INSERT INTO materia(nombre,descripcion) VALUES ('Bases de datos','Consultas y modelado');
--- INSERT INTO perfil(id_estudiante,biografia,semestre) VALUES (1,'Me gusta aprender SQL',3);
--- INSERT INTO publicacion(id_estudiante,id_materia,titulo,contenido) VALUES (1,1,'Duda de claves','¿Cómo funciona una clave foránea?');
--- SELECT p.titulo, e.nombre, m.nombre AS materia FROM publicacion p JOIN estudiante e ON e.id_estudiante=p.id_estudiante JOIN materia m ON m.id_materia=p.id_materia;
